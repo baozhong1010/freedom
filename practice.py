@@ -4,5 +4,5 @@ def keys(data):
     for i in data:
         mess.append(i)
     return mess
+    print mess
 data = keys(d)
-print data
