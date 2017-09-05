@@ -1,0 +1,12 @@
+#windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+#python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+

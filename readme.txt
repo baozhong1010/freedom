@@ -1,6 +1,1 @@
-Git is a distributed version control system.
-Git is a free software distributed under the GPL.
-Git has a mutable index called stage.
-Git tracks changes.
-Creating a new branch is quick and simple.
-merge
+再做个python的题：编写一个函数，输入参数是一个dict，对于dict里的每一个key，在同一行内打印key、value、value的类型（三者用空格隔开）。注意如果value也是dict的，也要遍历打印；如果value是list的，要遍历打印list的成员、成员类型（两者用空格隔开）。
