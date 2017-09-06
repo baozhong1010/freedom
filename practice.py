@@ -53,7 +53,7 @@ def mess(data):
         else:
             if _type == list:
                 for m in data['a list']:
-                    value3 = value[m]
+                    value3 = value[m-1]
                     _type3 = type(value3)
                     print value3, _type3
             else:
