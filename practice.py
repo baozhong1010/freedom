@@ -21,7 +21,7 @@ def mess(data,objkey):
         _type = type(value)
         if i == objkey:
             for j in data[objkey]:
-                value1 = data[j]
+                value1 = value[j]
                 _type = type(value1)
                 print j,value1,_type
         print i,value,_type
