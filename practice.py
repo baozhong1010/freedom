@@ -24,5 +24,8 @@ def mess(data,objkey):
                 value1 = value[j]
                 _type = type(value1)
                 print j,value1,_type
-        print i,value,_type
+        else:
+            
+            print i,value,_type
 mess(d,'math')
+
