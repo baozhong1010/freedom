@@ -13,7 +13,7 @@ values(d)
 
 
 
-
+'''
 d={'math': {'math': 88, 'chinese': 70, 'english': 80}, 'chinese': 70, 'english': 80}
 def mess(data,objkey):
     for i in data:
@@ -24,7 +24,27 @@ def mess(data,objkey):
                 value1 = value[j]
                 _type1 = type(value1)
                 print j,value1,_type1
-                  
+        
         print i,value,_type
 mess(d,'math')
+'''
+
+
+
+d={'math': {'math': 88, 'chinese': 70, 'english': 80}, 'chinese': 70, 'english': 80}
+def mess(data,objkey):
+    for i in data:
+        value = data[i]
+        _type = type(value)
+        if i == objkey:
+            print i,value,_type
+            for j in data[objkey]:
+                value1 = value[j]
+                _type1 = type(value1)
+                print j,value1,_type1
+        else:
+            print i,value,_type
+mess(d,'math')
+
+
 
