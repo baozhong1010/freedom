@@ -42,9 +42,23 @@ def mess(data):
             for j in data['fdsa']:
                 value1 = value[j]
                 _type1 = type(value1)
-                print j,value1,_type1
+                key = data['fdsa']
+                if _type1 == dict:
+                    for k in key['ccc']:
+                        value2 = value1[k]
+                        _type2 = type(value2)
+                        print k,value2,_type2
+                else:
+                    print j,value1,_type1
         else:
-            print i,value,_type
+            if _type == list:
+                for m in data['a list']:
+                    value3 = value[m]
+                    _type3 = type(value3)
+                    print value3, _type3
+            else:
+                print i,value,_type
+        
 mess(d2)
 
 
