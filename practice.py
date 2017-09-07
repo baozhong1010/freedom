@@ -63,18 +63,21 @@ for i in range(15):
 # empty dict
 d8 = {}
 
+
+
 def mess(data):
     for i in data:
         value = data[i]
         _type = type(value)
+        string = str(random.randint(100, 200))
         if _type == dict:
             print i,value,_type
             for j in data['fdsa']:
                 value1 = value[j]
                 _type1 = type(value1)
-                key = data['fdsa']
+                key1 = data['fdsa']
                 if _type1 == dict:
-                    for k in key['ccc']:
+                    for k in key1['ccc']:
                         value2 = value1[k]
                         _type2 = type(value2)
                         print k,value2,_type2
@@ -82,12 +85,49 @@ def mess(data):
                     print j,value1,_type1
         else:
             if _type == list:
-                for m in data['a list']:
-                    value3 = value[m-1]
-                    _type3 = type(value3)
-                    print value3, _type3
+                if i == 'a list':
+                    for m in data['a list']:
+                        print m,type(m)
+                elif i == 'b list':
+                    for n in data['b list']:
+                        print n,type(n)
+                elif i == 'c list':
+                    for l in data['c list']:
+                        if isinstance(l,str):
+                            print l,type(l)
+                        else:
+                            print l,type(l)
+                elif i == string:
+                    for x in data['string']:
+                        print x,type(x)
+                elif isinstance(value,list):
+                    for a in value:
+                        if isinstance(a,dict):
+                            for b in a:
+                                print b,a[b],type(a[b])
+                        elif isinstance(a,str):
+                            print a,type(a)
+                        else:
+                            print a,type(a)
+                
+                                         
             else:
                 print i,value,_type
+#mess(d2)
+#mess(d3)
+#mess(d4)
+#mess(d5)
+#mess(d6)
+#mess(d7)
+mess(d8)
 
-mess(d2)
+
+
+
+
+
+
+
+
+
 
