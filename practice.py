@@ -102,11 +102,7 @@ def mess(data):
                 key2 = data['asdf']
                 for y in key2:
                     print y,key2[y],type(key2[y])
-            elif i in range(15):
-                for s in d_temp:
-                    print s,d_temp[s]
             
-                    
         elif _type == list:
                 if i == 'a list':
                     for m in data['a list']:
