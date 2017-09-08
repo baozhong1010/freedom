@@ -63,19 +63,18 @@ for i in range(15):
 # empty dict
 d8 = {}
 
-
-
 def mess(data):
     for i in data:
         value = data[i]
         _type = type(value)
         string = str(random.randint(100, 200))
+        
         if _type == dict:
             print i,value,_type
-            for j in data['fdsa']:
+            key1 = data['fdsa']
+            for j in key1:
                 value1 = value[j]
                 _type1 = type(value1)
-                key1 = data['fdsa']
                 if _type1 == dict:
                     for k in key1['ccc']:
                         value2 = value1[k]
@@ -113,13 +112,18 @@ def mess(data):
                                          
             else:
                 print i,value,_type
-#mess(d2)
-#mess(d3)
-#mess(d4)
-#mess(d5)
-#mess(d6)
-#mess(d7)
-mess(d8)
+mess(d2)
+print '-'*20
+mess(d3)
+print '-'*20
+mess(d4)
+print '-'*20
+mess(d5)
+print '-'*20
+mess(d6)
+print '-'*20
+mess(d7)
+#mess(d8)
 
 
 
