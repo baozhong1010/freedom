@@ -1,4 +1,6 @@
+import hashlib
 import random
+import time
 '''
 d={'math': {'math': 88, 'chinese': 70, 'english': 80}, 'chinese': 70, 'english': 80}
 def values(data):
@@ -63,12 +65,26 @@ for i in range(15):
 # empty dict
 d8 = {}
 
+# another nested dict
+d9 = {0: 'aaaa', 1: 'bbbb', 'asdf': {'aaa': 111, 'bbb': 222}}
+
+# another nested dict - 2
+d10 = {
+    hashlib.sha1(str(time.time()).encode('ascii')).hexdigest(): {
+        hashlib.sha1(str(time.time()).encode('ascii')).hexdigest(): {
+            hashlib.sha1(str(time.time()).encode('ascii')).hexdigest(): {
+                hashlib.sha1(str(time.time()).encode('ascii')).hexdigest(): hashlib.sha1(str(time.time()).encode('ascii')).hexdigest(),
+            }
+        }
+    }
+}
+
 def mess(data):
     for i in data:
         value = data[i]
         _type = type(value)
         string = str(random.randint(100, 200))
-        
+
         if _type == dict:
             print i,value,_type
             key1 = data['fdsa']
@@ -108,8 +124,8 @@ def mess(data):
                             print a,type(a)
                         else:
                             print a,type(a)
-                
-                                         
+
+
             else:
                 print i,value,_type
 mess(d2)
