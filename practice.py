@@ -1,4 +1,3 @@
-
 import hashlib
 import random
 import time
@@ -78,6 +77,33 @@ d10 = {
     }
 }
 
+# dict with time key
+d11 = {
+    '%23.22f' % time.time(): 'value value value',
+}
+
+# nested dict with time key
+d12 = {
+    '%23.22f' % time.time(): {
+        '%23.22f' % time.time(): 'value value value',
+    }
+}
+
+# batch generate 10 nested dicts: d13 - d22
+alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+for i in range(13, 23):
+    globals()['d%d' % i] = {
+        ''.join([random.choice(alphabet), random.choice(alphabet), random.choice(alphabet), random.choice(alphabet)]): {
+            ''.join([random.choice(alphabet), random.choice(alphabet), random.choice(alphabet), random.choice(alphabet)]): 'value',
+        },
+    }
+
+# nested dict: d23 - d32: asd0 - asd9
+for i in range(23, 33):
+    globals()['d%d' % i] = {
+        'asd%d' % (i - 23): {'key': 'value'},
+    }
+
 def mess(data):
     for i in data:
         value = data[i]
@@ -87,7 +113,7 @@ def mess(data):
         if _type == dict:
             print i,value,_type
             if i == 'fdsa':
-                key1 = data['fdsa']  
+                key1 = data['fdsa']
                 for j in key1:
                     value1 = value[j]
                     _type1 = type(value1)
@@ -102,7 +128,7 @@ def mess(data):
                 key2 = data['asdf']
                 for y in key2:
                     print y,key2[y],type(key2[y])
-            
+
         elif _type == list:
                 if i == 'a list':
                     for m in data['a list']:
