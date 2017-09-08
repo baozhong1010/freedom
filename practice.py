@@ -77,6 +77,33 @@ d10 = {
     }
 }
 
+# dict with time key
+d11 = {
+    '%23.22f' % time.time(): 'value value value',
+}
+
+# nested dict with time key
+d12 = {
+    '%23.22f' % time.time(): {
+        '%23.22f' % time.time(): 'value value value',
+    }
+}
+
+# batch generate 10 nested dicts: d13 - d22
+alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+for i in range(13, 23):
+    globals()['d%d' % i] = {
+        ''.join([random.choice(alphabet), random.choice(alphabet), random.choice(alphabet), random.choice(alphabet)]): {
+            ''.join([random.choice(alphabet), random.choice(alphabet), random.choice(alphabet), random.choice(alphabet)]): 'value',
+        },
+    }
+
+# nested dict: d23 - d32: asd0 - asd9
+for i in range(23, 33):
+    globals()['d%d' % i] = {
+        'asd%d' % (i - 23): {'key': 'value'},
+    }
+
 def mess(data):
     for i in data:
         value = data[i]
