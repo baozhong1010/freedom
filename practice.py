@@ -65,7 +65,7 @@ d8 = {}
 
 # another nested dict
 d9 = {0: 'aaaa', 1: 'bbbb', 'asdf': {'aaa': 111, 'bbb': 222}}
-
+'''
 # another nested dict - 2
 d10 = {
     hashlib.sha1(str(time.time()).encode('ascii')).hexdigest(): {
@@ -97,13 +97,24 @@ for i in range(13, 23):
             ''.join([random.choice(alphabet), random.choice(alphabet), random.choice(alphabet), random.choice(alphabet)]): 'value',
         },
     }
+'''
 
 # nested dict: d23 - d32: asd0 - asd9
 for i in range(23, 33):
     globals()['d%d' % i] = {
         'asd%d' % (i - 23): {'key': 'value'},
     }
+    print 'd%d' % i,'asd%d' % (i - 23),globals()['d%d' % i]['asd%d' % (i - 23)],type(globals()['d%d' % i]['asd%d' % (i - 23)])
 
+
+
+
+
+
+
+
+    
+'''
 def mess(data):
     for i in data:
         value = data[i]
@@ -173,7 +184,7 @@ print '-'*20
 #mess(d8)
 print '-'*20
 #mess(d9)
-
+'''
 
 
 
