@@ -8,7 +8,6 @@ def values(data):
         value = data[i]
         _type = type(value)
         print i,value,_type
-
 values(d)
 '''
 
@@ -27,7 +26,6 @@ def mess(data,objkey):
                 value1 = value[j]
                 _type1 = type(value1)
                 print j,value1,_type1
-
         print i,value,_type
 mess(d,'math')
 '''
@@ -87,19 +85,24 @@ def mess(data):
 
         if _type == dict:
             print i,value,_type
-            key1 = data['fdsa']
-            for j in key1:
-                value1 = value[j]
-                _type1 = type(value1)
-                if _type1 == dict:
-                    for k in key1['ccc']:
-                        value2 = value1[k]
-                        _type2 = type(value2)
-                        print k,value2,_type2
-                else:
-                    print j,value1,_type1
-        else:
-            if _type == list:
+            if i == 'fdsa':
+                key1 = data['fdsa']
+                for j in key1:
+                    value1 = value[j]
+                    _type1 = type(value1)
+                    if _type1 == dict:
+                        for k in key1['ccc']:
+                            value2 = value1[k]
+                            _type2 = type(value2)
+                            print k,value2,_type2
+                    else:
+                        print j,value1,_type1
+            elif i == 'asdf':
+                key2 = data['asdf']
+                for y in key2:
+                    print y,key2[y],type(key2[y])
+
+        elif _type == list:
                 if i == 'a list':
                     for m in data['a list']:
                         print m,type(m)
@@ -126,25 +129,23 @@ def mess(data):
                             print a,type(a)
 
 
-            else:
-                print i,value,_type
+        else:
+            print i,value,_type
 mess(d2)
 print '-'*20
-mess(d3)
+#mess(d3)
 print '-'*20
-mess(d4)
+#mess(d4)
 print '-'*20
-mess(d5)
+#mess(d5)
 print '-'*20
-mess(d6)
+#mess(d6)
 print '-'*20
 mess(d7)
+print '-'*20
 #mess(d8)
-
-
-
-
-
+print '-'*20
+#mess(d9)
 
 
 
