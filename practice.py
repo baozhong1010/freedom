@@ -98,13 +98,22 @@ for i in range(13, 23):
         },
     }
 '''
-
+'''
 # nested dict: d23 - d32: asd0 - asd9
 for i in range(23, 33):
     globals()['d%d' % i] = {
         'asd%d' % (i - 23): {'key': 'value'},
     }
-    print 'd%d' % i,'asd%d' % (i - 23),globals()['d%d' % i]['asd%d' % (i - 23)],type(globals()['d%d' % i]['asd%d' % (i - 23)])
+    _dict = globals()['d%d' % i]
+    key = 'asd%d' % (i - 23)
+    value = globals()['d%d' % i]['asd%d' % (i - 23)]
+    _type = type(value)
+    print key,value,_type
+    for j in _dict[key]:
+        valuej = _dict[key][j]
+        _typej = type(_dict[key][j])
+        print j,valuej,_typej
+ '''   
 
 
 
@@ -113,78 +122,66 @@ for i in range(23, 33):
 
 
 
-    
-'''
+
 def mess(data):
     for i in data:
         value = data[i]
         _type = type(value)
         string = str(random.randint(100, 200))
-
         if _type == dict:
-            print i,value,_type
-            if i == 'fdsa':
-                key1 = data['fdsa']
-                for j in key1:
-                    value1 = value[j]
-                    _type1 = type(value1)
-                    if _type1 == dict:
-                        for k in key1['ccc']:
-                            value2 = value1[k]
-                            _type2 = type(value2)
-                            print k,value2,_type2
-                    else:
-                        print j,value1,_type1
-            elif i == 'asdf':
-                key2 = data['asdf']
-                for y in key2:
-                    print y,key2[y],type(key2[y])
-
+            print i,value,_type#输出最外层字典的各项
+            for j in data[i]:
+                value1 = data[i][j]
+                _type1 = type(value1)
+                print j,value1,_type1#输出‘fsda’字典里的各项
+                if type(value1) == dict:
+                    for k in value1:
+                        value2 = value1[k]
+                        _type2 = type(value2)
+                        print k,value2,_type2#输出最里面一层‘ccc’的dict
+        #所有列表的输出
         elif _type == list:
-                if i == 'a list':
-                    for m in data['a list']:
-                        print m,type(m)
-                elif i == 'b list':
-                    for n in data['b list']:
-                        print n,type(n)
-                elif i == 'c list':
-                    for l in data['c list']:
-                        if isinstance(l,str):
-                            print l,type(l)
-                        else:
-                            print l,type(l)
-                elif i == string:
-                    for x in data['string']:
-                        print x,type(x)
-                elif isinstance(value,list):
-                    for a in value:
-                        if isinstance(a,dict):
-                            for b in a:
-                                print b,a[b],type(a[b])
-                        elif isinstance(a,str):
-                            print a,type(a)
-                        else:
-                            print a,type(a)
-
-
+            for m in data[i]:
+                if isinstance(m,str):
+                    print m,type(m)
+                elif isinstance(m,dict):
+                    for n in m:
+                        print n,m[n],type(m[n])
+                else:
+                    print m,type(m)
+        #一个循环字典输出
+        elif _type == int:
+            for i in range(23, 33):
+                globals()['d%d' % i] = {
+                    'asd%d' % (i - 23): {'key': 'value'},
+                }
+                _dict = globals()['d%d' % i]
+                key10 = 'asd%d' % (i - 23)
+                value10 = globals()['d%d' % i]['asd%d' % (i - 23)]
+                _type10 = type(value10)
+                print key10,value10,_type10
+                for j10 in _dict[key10]:
+                    valuej10 = _dict[key10][j10]
+                    _typej10 = type(_dict[key10][j10])
+                    print j10,valuej10,_typej10
         else:
             print i,value,_type
+print '-'*20
 mess(d2)
 print '-'*20
-#mess(d3)
+mess(d3)
 print '-'*20
-#mess(d4)
+mess(d4)
 print '-'*20
-#mess(d5)
+mess(d5)
 print '-'*20
-#mess(d6)
+mess(d6)
 print '-'*20
-mess(d7)
+#mess(d7)
 print '-'*20
 #mess(d8)
 print '-'*20
 #mess(d9)
-'''
 
 
 
