@@ -115,90 +115,9 @@ def mess(data):
     for i in data:
         value = data[i]
         _type = type(value)
-        string = str(random.randint(100, 200))
+        print i,value,_type
         if _type == dict:
-            print i,value,_type#输出最外层字典的各项     
-            for j in data[i]:
-                value2 = data[i][j]
-                _type2 = type(value2)
-                print j,value2,_type2#输出第二层字典里的各项
-                if type(value2) == dict:
-                    for j3 in value2:
-                        value3 = value2[j3]
-                        _type3 = type(value3)
-                        print j3,value3,_type3#输出第三层字典的各项
-                        if type(value3) == dict:  
-                            for j4 in value3:
-                                value4 = value3[j4]
-                                _type4 = type(value4)
-                                print j4,value4,_type4#输出第四层字典的各项
-                                if type(value4) == dict:
-                                    for j5 in value4:
-                                        value5 = value4[j5]
-                                        _type5 = type(value5)
-                                        print j5,value5,_type5#输出第五层字典的各项
-                                        if type(value5) == dict:
-                                            for j6 in value5:
-                                                value6 = value5[j6]
-                                                _type6 = type(value6)
-                                                print j6,value6,_type6#输出第六层字典的各项
-                                                if type(value6) == dict:
-                                                    for j7 in value6:
-                                                        value7 = value6[j7]
-                                                        _type7 = type(value7)
-                                                        print j7,value7,_type7#输出第七层字典的各项
-                                                        if type(value7) == dict:
-                                                            for j8 in value7:
-                                                                value8 = value7[j8]
-                                                                _type8 = type(value8)
-                                                                print j8,value8,_type8#输出第八层字典的各项
-                                                                if type(value8) == dict:
-                                                                    for j9 in value8:
-                                                                        value9 = value8[j9]
-                                                                        _type9 = type(value9)
-                                                                        print j9,value9,_type9#输出第九层字典的各项
-                                                                        if type(value9) == dict:
-                                                                            for j10 in value9:
-                                                                                value10 = value9[j10]
-                                                                                _type10 = type(value10)
-                                                                                print j10,value10,_type10#输出第十层字典的各项
-                                                                                if type(value10) == dict:
-                                                                                    for j11 in value10:
-                                                                                        value11 = value10[j11]
-                                                                                        _type11 = type(value11)
-                                                                                        print j11,value11,_type11#输出第十一层字典的各项
-                                                                                        if type(value11) == dict:
-                                                                                            for j12 in value11:
-                                                                                                value12 = value11[j12]
-                                                                                                _type12 = type(value12)
-                                                                                                print j12,value12,_type12#输出第十二层字典的各项
-                                                                                                if type(value12) == dict:
-                                                                                                    for j13 in value12:
-                                                                                                        value13 = value12[j13]
-                                                                                                        _type13 = type(value13)
-                                                                                                        print j13,value13,_type13#输出第十三层字典的各项
-                                                                                                        if type(value13) == dict:
-                                                                                                            for j14 in value13:
-                                                                                                                value14 = value13[j14]
-                                                                                                                _type14 = type(value14)
-                                                                                                                print j14,value14,_type14#输出第十四层字典的各项
-                                                                                                                if type(value14) == dict:
-                                                                                                                    for j15 in value14:
-                                                                                                                        value15 = value14[j15]
-                                                                                                                        _type15 = type(value15)
-                                                                                                                        print j15,value15,_type15#输出第十五层字典的各项
-                                                                                                                        if type(value15) == dict:
-                                                                                                                            for j16 in value15:
-                                                                                                                                value16 = value15[j16]
-                                                                                                                                _type16 = type(value16)
-                                                                                                                                print j16,value16,_type16#输出第十六层字典的各项
-                                                                                                                                if type(value16) == dict:
-                                                                                                                                    for j17 in value16:
-                                                                                                                                        value17 = value16[j17]
-                                                                                                                                        _type17 = type(value17)
-                                                                                                                                        print j17,value17,_type17#输出第十七层字典的各项
-                                        
-                        
+            return mess(data)#所有value是dict的循环输出其key，value，value的类型                                             
                         
         #所有列表的输出
         elif _type == list:
@@ -210,8 +129,7 @@ def mess(data):
                         print n,m[n],type(m[n])
                 else:
                     print m,type(m)
-        else:
-            print i,value,_type
+    
 print '-'*20
 mess(d2)
 print '-'*20
